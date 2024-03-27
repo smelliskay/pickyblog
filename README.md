@@ -1,4 +1,4 @@
-![tailwind-nextjs-banner](/public/static/images/pikbagel.png)
+![tailwind-nextjs-banner](/public/static/images/logo.png)
 
 # Tailwind Nextjs Starter Blog
 

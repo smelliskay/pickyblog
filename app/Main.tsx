@@ -3,18 +3,32 @@ import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { formatDate } from 'pliny/utils/formatDate'
 import NewsletterForm from 'pliny/ui/NewsletterForm'
+import '../css/globals.css'
+import '../css/main.css'
 
 const MAX_DISPLAY = 5
 
 export default function Home({ posts }) {
+
   return (
     <>
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="space-y-2 pb-8 pt-6 md:space-y-5">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-            Latest
+      {/* Hero */}
+      <div className="py-50 text-left">
+        <div className="container mx-auto">
+          <h1 className="text-white dark:text-black text-4xl sm:text-5xl md:text-6xl font-bold leading-tight pb-4 custom-gradient">
+            Smelly.dev
           </h1>
-          <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
+          <p className="text-white dark:text-black custom-gradient-sub">{siteMetadata.description}</p>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="divide-y divide-gray-200 dark:divide-gray-70">
+        <div className="space-y-2 pb-8 pt-6 md:space-y-5">
+          <h2 className="text-3xl font-extrabold text-center leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+            Latest
+          </h2>
+          <p className="text-lg leading-7 text-center text-gray-500 dark:text-gray-400">
             {siteMetadata.description}
           </p>
         </div>
@@ -23,7 +37,7 @@ export default function Home({ posts }) {
           {posts.slice(0, MAX_DISPLAY).map((post) => {
             const { slug, date, title, summary, tags } = post
             return (
-              <li key={slug} className="py-12">
+              <li key={slug} className="max-w-2xl mx-auto rounded-xl shadow-md border mt-5 py-5 px-5">
                 <article>
                   <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
                     <dl>
@@ -35,14 +49,14 @@ export default function Home({ posts }) {
                     <div className="space-y-5 xl:col-span-3">
                       <div className="space-y-6">
                         <div>
-                          <h2 className="text-2xl font-bold leading-8 tracking-tight">
+                          <h3 className="text-2xl font-bold leading-8 tracking-tight">
                             <Link
                               href={`/blog/${slug}`}
                               className="text-gray-900 dark:text-gray-100"
                             >
                               {title}
                             </Link>
-                          </h2>
+                          </h3>
                           <div className="flex flex-wrap">
                             {tags.map((tag) => (
                               <Tag key={tag} text={tag} />
