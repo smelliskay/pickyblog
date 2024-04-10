@@ -7,6 +7,8 @@ const ThemeSwitch = () => {
   const [mounted, setMounted] = useState(false)
   const { theme, setTheme, resolvedTheme } = useTheme()
 
+  const themes = [{ name: 'light' }, { name: 'dark' }, { name: 'winter'}];
+
   // When mounted on client, now we can show the UI
   useEffect(() => setMounted(true), [])
 
@@ -14,10 +16,16 @@ const ThemeSwitch = () => {
     return null
   }
 
+  const determineTheme = () => {
+    const current = themes.findIndex(theme => theme.name === resolvedTheme);
+    console.log("Returning: ", themes[(current + 1) % themes.length].name);
+    return themes[(current + 1) % themes.length].name
+  }
+
   return (
     <button
-      aria-label="Toggle Dark Mode"
-      onClick={() => setTheme(theme === 'dark' || resolvedTheme === 'dark' ? 'light' : 'dark')}
+      aria-label="Toggle Theme"
+      onClick={() => setTheme(determineTheme())}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

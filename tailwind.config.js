@@ -27,6 +27,8 @@ module.exports = {
       colors: {
         primary: colors.pink,
         gray: colors.gray,
+        // ADD NEW COLORS HERE
+        emerald: colors.emerald,
       },
       typography: ({ theme }) => ({
         DEFAULT: {
