@@ -1,15 +1,14 @@
-import Link from '@/components/Link'
-import Tag from '@/components/Tag'
-import siteMetadata from '@/data/siteMetadata'
-import { formatDate } from 'pliny/utils/formatDate'
-import NewsletterForm from 'pliny/ui/NewsletterForm'
-import '../css/globals.css'
-import '../css/main.css'
+import Link from "@/components/Link";
+import Tag from "@/components/Tag";
+import siteMetadata from "@/data/siteMetadata";
+import { formatDate } from "pliny/utils/formatDate";
+import NewsletterForm from "pliny/ui/NewsletterForm";
+import "../css/globals.css";
+import "../css/main.css";
 
-const MAX_DISPLAY = 5
+const MAX_DISPLAY = 5;
 
 export default function Home({ posts }) {
-
   return (
     <>
       {/* Hero */}
@@ -18,7 +17,9 @@ export default function Home({ posts }) {
           <h1 className="text-white dark:text-black text-4xl sm:text-5xl md:text-6xl font-bold leading-tight pb-4 custom-gradient">
             Smelly.dev
           </h1>
-          <p className="text-white dark:text-black custom-gradient-sub">{siteMetadata.description}</p>
+          <p className="text-white dark:text-black custom-gradient-sub">
+            {siteMetadata.description}
+          </p>
         </div>
       </div>
 
@@ -33,17 +34,22 @@ export default function Home({ posts }) {
           </p>
         </div>
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
-          {!posts.length && 'No posts found.'}
+          {!posts.length && "No posts found."}
           {posts.slice(0, MAX_DISPLAY).map((post) => {
-            const { slug, date, title, summary, tags } = post
+            const { slug, date, title, summary, tags } = post;
             return (
-              <li key={slug} className="max-w-2xl mx-auto rounded-xl shadow-md border mt-5 py-5 px-5">
+              <li
+                key={slug}
+                className="max-w-2xl mx-auto rounded-xl shadow-md border mt-5 py-5 px-5"
+              >
                 <article>
                   <div className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
                     <dl>
                       <dt className="sr-only">Published on</dt>
                       <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
-                        <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
+                        <time dateTime={date}>
+                          {formatDate(date, siteMetadata.locale)}
+                        </time>
                       </dd>
                     </dl>
                     <div className="space-y-5 xl:col-span-3">
@@ -80,7 +86,7 @@ export default function Home({ posts }) {
                   </div>
                 </article>
               </li>
-            )
+            );
           })}
         </ul>
       </div>
@@ -101,5 +107,5 @@ export default function Home({ posts }) {
         </div>
       )}
     </>
-  )
+  );
 }

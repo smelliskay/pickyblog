@@ -7,13 +7,13 @@
 3. Modify `component/Image.tsx` to use the correct base path for the image source:
 
    ```tsx
-   import NextImage, { ImageProps } from 'next/image'
+   import NextImage, { ImageProps } from "next/image";
 
    const Image = ({ src, ...rest }: ImageProps) => (
      <NextImage src={`/tailwind-nextjs-starter-blog${src}`} {...rest} />
-   )
+   );
 
-   export default Image
+   export default Image;
    ```
 
 4. To automate deployment, here's a Github action that you could use
@@ -28,7 +28,7 @@ name: Deploy Next.js site to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ['test-gh-pages-static']
+    branches: ["test-gh-pages-static"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -42,7 +42,7 @@ permissions:
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
-  group: 'pages'
+  group: "pages"
   cancel-in-progress: false
 
 jobs:
@@ -73,7 +73,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: "18"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Restore cache
         uses: actions/cache@v3
