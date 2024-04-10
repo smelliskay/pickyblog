@@ -1,48 +1,60 @@
 @use postcss-preset-env {
-    stage: 0;
-  }
-  
-  :root {
-    --color-background: #000119;
-    --stroke-width: calc(1em / 16);
-    --font-size: 10vmin;
-    --font-weight: 700;
-    --letter-spacing: calc(1em / 8);
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    display: grid;
-    font-family: Poppins, sans-serif;
-    margin: 0;
-    min-block-size: 100vh;
-    place-items: center;
-    padding: 5vmin;
-  }
-  
-  .custom-gradient {
-    background-clip: text;
-    background-image: linear-gradient(to right, #09f1b8, #00a2ff, #ff00d2, #fed90f);
-    color: var(--color-background);
-    font-size: var(--font-size);
-    font-weight: var(--font-weight);
-    letter-spacing: var(--letter-spacing);
-    padding: calc(--stroke-width / 2);
-    -webkit-text-stroke-color: transparent;
-    -webkit-text-stroke-width: var(--stroke-width);
-  }
+  stage: 0;
+}
 
-  .custom-gradient-sub {
-    background-clip: text;
-    background-image: linear-gradient(to right, #09f1b8, #00a2ff, #ff00d2, #fed90f);
-    color: var(--color-background);
-    font-size: 4vmin;
-    font-weight: var(--font-weight);
-    letter-spacing: var(--letter-spacing);
-    padding: calc(--stroke-width / 2);
-    -webkit-text-stroke-color: transparent;
-    -webkit-text-stroke-width: var(--stroke-width);
-  }
+:root {
+  --color-background: #000119;
+  --stroke-width: calc(1em / 16);
+  --font-size: 10vmin;
+  --font-weight: 700;
+  --letter-spacing: calc(1em / 8);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  font-family: Poppins, sans-serif;
+  margin: 0;
+  min-block-size: 100vh;
+  place-items: center;
+  padding: 5vmin;
+}
+
+.custom-gradient {
+  background-clip: text;
+  background-image: linear-gradient(
+    to right,
+    #09f1b8,
+    #00a2ff,
+    #ff00d2,
+    #fed90f
+  );
+  color: var(--color-background);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  letter-spacing: var(--letter-spacing);
+  padding: calc(--stroke-width / 2);
+  -webkit-text-stroke-color: transparent;
+  -webkit-text-stroke-width: var(--stroke-width);
+}
+
+.custom-gradient-sub {
+  background-clip: text;
+  background-image: linear-gradient(
+    to right,
+    #09f1b8,
+    #00a2ff,
+    #ff00d2,
+    #fed90f
+  );
+  color: var(--color-background);
+  font-size: 4vmin;
+  font-weight: var(--font-weight);
+  letter-spacing: var(--letter-spacing);
+  padding: calc(--stroke-width / 2);
+  -webkit-text-stroke-color: transparent;
+  -webkit-text-stroke-width: var(--stroke-width);
+}
